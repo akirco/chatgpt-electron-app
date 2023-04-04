@@ -1,0 +1,15 @@
+.layout-left {
+  width: 300px;
+  height: 100%;
+}
+.layout-right {
+  flex: 1;
+}
+.layout-bar {
+  height: 35px;
+  width: inherit;
+  user-select: none;
+}
+.layout-main {
+  height: calc(100% - 35px);
+}
