@@ -5,6 +5,16 @@
 export {}
 declare global {
   const App: typeof import('./App')['default']
+  const ChatGpt: typeof import('./components/leftpanel/icons')['ChatGpt']
+  const ChromeClose: typeof import('./components/titlebar/icons')['ChromeClose']
+  const ChromeMinimize: typeof import('./components/titlebar/icons')['ChromeMinimize']
+  const ChromeToggle: typeof import('./components/titlebar/icons')['ChromeToggle']
+  const CodiconAdd: typeof import('./components/leftpanel/icons')['CodiconAdd']
+  const CodiconFile: typeof import('./components/mainpanel/icons')['CodiconFile']
+  const CodiconMarkdown: typeof import('./components/mainpanel/icons')['CodiconMarkdown']
+  const CodiconSettings: typeof import('./components/leftpanel/icons')['CodiconSettings']
+  const CodiconTrash: typeof import('./components/leftpanel/icons')['CodiconTrash']
+  const IconButton: typeof import('./components/iconbutton/index')['IconButton']
   const Link: typeof import('react-router-dom')['Link']
   const NavLink: typeof import('react-router-dom')['NavLink']
   const Navigate: typeof import('react-router-dom')['Navigate']

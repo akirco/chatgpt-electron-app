@@ -30,10 +30,7 @@ export default defineConfig({
       AutoImport({
         imports: ['react', 'react-router-dom'],
         dts: './src/auto-imports.d.ts',
-        dirs: ['./src/components', './src/layout', './src'],
-        eslintrc: {
-          enabled: true
-        },
+        dirs: ['./src/components/**/*', './src/layout', './src'],
         defaultExportByFilename: true,
         resolvers: [
           IconsResolver({
