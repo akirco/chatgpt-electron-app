@@ -1,4 +1,4 @@
-.icon-button {
+.iconButton {
   background-color: var(--white);
   border-radius: 10px;
   display: flex;
@@ -11,19 +11,11 @@
   user-select: none;
 }
 
-.shadow {
-  box-shadow: var(--card-shadow);
-}
-
-.border {
-  border: var(--border-in-light);
-}
-
-.icon-button:hover {
+.iconButton:hover {
   border-color: var(--primary);
 }
 
-.icon-button-icon {
+.iconButtonIcon {
   width: 16px;
   height: 16px;
   display: flex;
@@ -32,12 +24,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .icon-button {
+  .iconButton {
     padding: 16px;
   }
 }
 
-.icon-button-text {
+.iconButtonText {
   margin-left: 5px;
   font-size: 12px;
 }

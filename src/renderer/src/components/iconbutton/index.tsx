@@ -1,28 +1,24 @@
 import style from '@renderer/assets/styles/button.module.scss'
+import { CSSProperties, MouseEventHandler } from 'react'
 
-export function IconButton(props: {
-  onClick?: () => void
+type IconButtonProps = {
+  onClick?: MouseEventHandler
   icon: JSX.Element
+  style?: CSSProperties
   text?: string
-  bordered?: boolean
-  shadow?: boolean
+  type?: string
   className?: string
-  title?: string
-}) {
+}
+
+export function IconButton(props: IconButtonProps) {
   return (
     <div
-      className={
-        style['icon-button'] +
-        ` ${props.bordered && style.border} ${props.shadow && style.shadow} ${
-          props.className ?? ''
-        } clickable`
-      }
+      className={`${style.iconButton} ${props.className ?? ''}`}
       onClick={props.onClick}
-      title={props.title}
       role="button"
     >
-      <div className={style['icon-button-icon']}>{props.icon}</div>
-      {props.text && <div className={style['icon-button-text']}>{props.text}</div>}
+      <div className={style.iconButtonIcon}>{props.icon}</div>
+      {props.text && <div className={style.iconButtonText}>{props.text}</div>}
     </div>
   )
 }

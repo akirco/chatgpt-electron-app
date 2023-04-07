@@ -28,9 +28,9 @@
 
 .actionMin:hover,
 .actionMaxOrRestore:hover {
-  background-color: #35353c;
+  background-color: var(--titlebar-a-hover-0);
 }
 
 .actionClose:hover {
-  background-color: #8e200a;
+  background-color: var(--titlebar-a-hover-1);
 }

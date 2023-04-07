@@ -8,12 +8,7 @@ function Main() {
           <div className={style.drag}></div>
         </div>
       </div>
-      <div className={style.chatMessage}>
-        <div className={style.messageContent}></div>
-        <div className={style.messageInput}>
-          <input type="text" />
-        </div>
-      </div>
+      <div className={style.chatMessage}></div>
     </div>
   )
 }

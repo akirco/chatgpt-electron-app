@@ -32,6 +32,9 @@ export default defineConfig({
         dts: './src/auto-imports.d.ts',
         dirs: ['./src/components/**/*', './src/layout', './src'],
         defaultExportByFilename: true,
+        eslintrc: {
+          enabled: true
+        },
         resolvers: [
           IconsResolver({
             enabledCollections: ['Codicons']

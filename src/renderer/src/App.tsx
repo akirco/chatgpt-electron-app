@@ -1,24 +1,24 @@
-import '@renderer/assets/styles/layout.scss'
+import style from '@renderer/assets/styles/app.module.scss'
 import LeftPanel from './components/leftpanel'
 import Main from './components/mainpanel'
 import TitleBar from './components/titlebar'
-import Layout from './layout'
+import Box from './layout/box'
 
 function App() {
   return (
     <>
-      <Layout type={'left'} style={{ background: '#212128', borderRight: '1px solid #1e1f21' }}>
-        <Layout type={'bar'} draggable></Layout>
+      <Box type={'left'} className={style.leftPanel}>
+        <Box type={'bar'} draggable></Box>
         <LeftPanel />
-      </Layout>
-      <Layout type={'right'}>
-        <Layout type={'bar'}>
+      </Box>
+      <Box type={'right'}>
+        <Box type={'bar'} className={style.rightTopBar}>
           <TitleBar />
-        </Layout>
-        <Layout type={'main'}>
+        </Box>
+        <Box type={'main'}>
           <Main />
-        </Layout>
-      </Layout>
+        </Box>
+      </Box>
     </>
   )
 }

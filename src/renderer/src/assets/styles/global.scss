@@ -1,0 +1,50 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin all {
+  --white-0: #ffffff;
+  --white-1: #f6f8fa;
+  --white-2: #f4f6f8;
+  --gray-0: #e3e4e6;
+  --gray-1: #d0d7de;
+  --gray-2: #78818a;
+  --black-0: #505962;
+  --black-1: ##1f262d;
+  --black-2: ##000f15;
+  --brown-0: #e57203;
+  --brown-1: #b35900;
+  --brown-2: ##1f0b00;
+  --red-0: #ff5252;
+  --opacity-0: rgba(0, 0, 0, 0.1);
+}
+@mixin light {
+  @include all;
+  --left-panel-bg: var(--white-1);
+  --left-panel-br: 1px solid var(--gray-0);
+  --titlebar-bg: var(--white-1);
+  --titlebar-bt: 1px solid var(--gray-1);
+  --titlebar-a-hover-0: var(--gray-0);
+  --titlebar-a-hover-1: var(--red-0);
+  --border-shadow: 1px 1px 1px var(--opacity-0);
+}
+@mixin dark {
+}
+
+:root {
+  @include light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark;
+  }
+}

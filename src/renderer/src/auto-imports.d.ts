@@ -23,7 +23,7 @@ declare global {
   const Routes: typeof import('react-router-dom')['Routes']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']
-  const index: typeof import('./layout/index')['default']
+  const index: typeof import('./components/titlebar/index')['default']
   const lazy: typeof import('react')['lazy']
   const memo: typeof import('react')['memo']
   const startTransition: typeof import('react')['startTransition']
