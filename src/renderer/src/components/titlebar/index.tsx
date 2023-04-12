@@ -19,6 +19,7 @@ const BarBox = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--titlebar-bg);
   }
   &.dragRegion {
     -webkit-app-region: drag;

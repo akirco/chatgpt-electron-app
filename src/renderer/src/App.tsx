@@ -1,23 +1,24 @@
-import LeftPanel from './components/leftpanel'
-import Main from './components/mainpanel'
+import { darkTheme, lightTheme } from '@renderer/utils/theme'
+import { Route, Routes } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
 import TitleBar from './components/titlebar'
-import Box from './layout/box'
+import Landing from './views/landing'
+import Space from './views/space'
 
 function App() {
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
   return (
     <>
-      <Box type={'left'} className={`leftPanel`}>
-        <Box type={'bar'} draggable></Box>
-        <LeftPanel />
-      </Box>
-      <Box type={'right'}>
-        <Box type={'bar'} className={`rightTopBar`}>
-          <TitleBar />
-        </Box>
-        <Box type={'main'}>
-          <Main />
-        </Box>
-      </Box>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <TitleBar />
+        <Routes>
+          <Route path="/" element={<Landing toggleTheme={toggleTheme} />}></Route>
+          <Route path="/space" element={<Space />}></Route>
+        </Routes>
+      </ThemeProvider>
     </>
   )
 }

@@ -10,9 +10,9 @@ const MBox = styled.div`
     height: 80px;
     z-index: -1;
     display: flex;
-    border-bottom: var(--titlebar-bt);
+    /* border-bottom: var(--titlebar-bt);
     background-color: var(--white-0);
-    box-shadow: var(--border-shadow);
+    box-shadow: var(--border-shadow); */
   }
   &.topicInfo {
     flex: 1;
