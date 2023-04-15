@@ -6,7 +6,7 @@ interface LandingProps {
   toggleTheme?: () => void
 }
 
-function Landing({}: LandingProps) {
+function Landing({ toggleTheme }: LandingProps) {
   return (
     <Box width={'100%'} height={'100%'} display="flex">
       <Box width={125} padding={'md'}>
@@ -23,6 +23,8 @@ function Landing({}: LandingProps) {
             bg={'bg2'}
             h={'50px'}
             w={'50px'}
+            text="dark"
+            onClick={toggleTheme}
           />
         </Box>
       </Box>
