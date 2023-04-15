@@ -1,9 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import { resolve } from 'path'
-import AutoImport from 'unplugin-auto-import/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Icons from 'unplugin-icons/vite'
 
 export default defineConfig({
   main: {
@@ -24,23 +21,6 @@ export default defineConfig({
         '@bridge': resolve('src/bridge')
       }
     },
-    plugins: [
-      react(),
-      Icons({ autoInstall: true, compiler: 'jsx', jsx: 'react' }),
-      AutoImport({
-        imports: ['react', 'react-router-dom'],
-        dts: './src/auto-imports.d.ts',
-        dirs: ['./src/components/**/*', './src/layout', './src'],
-        defaultExportByFilename: true,
-        eslintrc: {
-          enabled: true
-        },
-        resolvers: [
-          IconsResolver({
-            enabledCollections: ['Codicons']
-          })
-        ]
-      })
-    ]
+    plugins: [react()]
   }
 })

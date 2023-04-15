@@ -1,7 +1,8 @@
-import { darkTheme, lightTheme } from '@renderer/utils/theme'
+import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import TitleBar from './components/titlebar'
+import { GlobalStyles, createTheme } from './theme'
 import Landing from './views/landing'
 import Space from './views/space'
 
@@ -11,15 +12,14 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
   return (
-    <>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <TitleBar />
-        <Routes>
-          <Route path="/" element={<Landing toggleTheme={toggleTheme} />}></Route>
-          <Route path="/space" element={<Space />}></Route>
-        </Routes>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={createTheme(theme)}>
+      <GlobalStyles />
+      <TitleBar />
+      <Routes>
+        <Route path="/" element={<Landing toggleTheme={toggleTheme} />}></Route>
+        <Route path="/space" element={<Space />}></Route>
+      </Routes>
+    </ThemeProvider>
   )
 }
 

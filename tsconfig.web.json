@@ -11,10 +11,8 @@
   "compilerOptions": {
     "composite": true,
     "jsx": "react-jsx",
-    "types": ["unplugin-icons/types/react"],
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/unplugin-icons/types/react"
     ],
     "baseUrl": ".",
     "paths": {

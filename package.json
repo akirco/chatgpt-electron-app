@@ -22,6 +22,8 @@
   "dependencies": {
     "@electron-toolkit/preload": "^1.0.3",
     "@electron-toolkit/utils": "^1.0.2",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "electron-updater": "^5.3.0",
     "react-router-dom": "^6.10.0",
     "styled-components": "^5.3.9",
@@ -30,17 +32,15 @@
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@electron/notarize": "^1.2.3",
-    "@iconify-json/codicon": "^1.1.24",
-    "@svgr/core": "^7.0.0",
-    "@svgr/plugin-jsx": "^7.0.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "@types/styled-components": "^5.1.26",
+    "@types/styled-system": "^5.1.16",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "@vitejs/plugin-react": "^3.1.0",
-    "electron": "^24.1.0",
+    "electron": "^24.1.2",
     "electron-builder": "^23.6.0",
     "electron-vite": "^1.0.21",
     "eslint": "^8.38.0",
@@ -51,10 +51,7 @@
     "prettier": "^2.8.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.62.0",
     "typescript": "^5.0.4",
-    "unplugin-auto-import": "^0.15.2",
-    "unplugin-icons": "^0.16.1",
     "vite": "^4.2.1"
   }
 }
