@@ -1,3 +1,1 @@
-const ipcRenderer = window.electron.ipcRenderer
-
-export default ipcRenderer
+export default window.electron.ipcRenderer

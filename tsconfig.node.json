@@ -8,6 +8,9 @@
     "paths": {
       "@bridge/*":[
         "src/bridge/*"
+      ],
+      "@main/*":[
+        "src/main/*"
       ]
     }
   }

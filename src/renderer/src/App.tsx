@@ -1,25 +1,33 @@
-import { useState } from 'react'
+import TitleBar from '@render/components/titlebar'
 import { Route, Routes } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
-import TitleBar from './components/titlebar'
-import { GlobalStyles, createTheme } from './theme'
-import Landing from './views/landing'
-import Space from './views/space'
+import Landing from '@render/views/landing'
+import { Global, css } from '@emotion/react'
+import Space from '@render/views/space'
 
 function App() {
-  const [theme, setTheme] = useState('light')
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
   return (
-    <ThemeProvider theme={createTheme(theme)}>
-      <GlobalStyles />
+    <>
+      <Global
+        styles={css`
+          * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+          }
+          html,
+          body,
+          #root {
+            width: 100%;
+            height: 100%;
+          }
+        `}
+      />
       <TitleBar />
       <Routes>
-        <Route path="/" element={<Landing toggleTheme={toggleTheme} />}></Route>
+        <Route path="/" element={<Landing />}></Route>
         <Route path="/space" element={<Space />}></Route>
       </Routes>
-    </ThemeProvider>
+    </>
   )
 }
 

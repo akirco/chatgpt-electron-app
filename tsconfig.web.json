@@ -12,11 +12,11 @@
     "composite": true,
     "jsx": "react-jsx",
     "typeRoots": [
-      "./node_modules/@types",
+      "./node_modules/@types"
     ],
     "baseUrl": ".",
     "paths": {
-      "@renderer/*": [
+      "@render/*": [
         "src/renderer/src/*"
       ],
       "@bridge/*":[

@@ -6,6 +6,7 @@ export default defineConfig({
   main: {
     resolve: {
       alias: {
+        '@main': resolve('src/main'),
         '@bridge': resolve('src/bridge')
       }
     },
@@ -17,7 +18,7 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        '@renderer': resolve('src/renderer/src'),
+        '@render': resolve('src/renderer/src'),
         '@bridge': resolve('src/bridge')
       }
     },

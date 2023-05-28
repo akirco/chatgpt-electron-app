@@ -1,30 +1,16 @@
+import ipcRenderer from '@render/utils/ipcRenderer'
 import { channels } from '@bridge/index'
-import { ChromeClose, ChromeMinimize, ChromeToggle } from '@renderer/components/icons'
-import { ThemeProps } from '@renderer/typings/theme'
-import ipcRenderer from '@renderer/utils/ipcRenderer'
+import styled from '@emotion/styled'
 import { useState } from 'react'
-import styled from 'styled-components'
-import { background, borderBottom, boxShadow, compose } from 'styled-system'
-
-function toggleSize() {
-  ipcRenderer.send(channels.toggleSize)
-}
-function winMinSize() {
-  ipcRenderer.send(channels.windowMinSize, true)
-}
-function winClose() {
-  ipcRenderer.send(channels.windowClose, true)
-}
+import { VscClose, VscChromeRestore, VscChromeMaximize, VscChromeMinimize } from 'react-icons/vsc'
 
 const BarBox = styled('div')`
-  ${compose(background, boxShadow, borderBottom)}
-  &.titleBarContainer {
+  &.barContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: ${({ theme }: ThemeProps) => theme.borders.$2};
-    box-shadow: ${({ theme }: ThemeProps) => theme.shadows.small};
-    background-color: ${({ theme }: ThemeProps) => theme.colors.bg2};
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #f6f8fa;
   }
   &.dragRegion {
     -webkit-app-region: drag;
@@ -49,10 +35,10 @@ const BarBox = styled('div')`
   }
   &.actionMin:hover,
   &.actionZoom:hover {
-    background-color: ${({ theme }: ThemeProps) => theme.colors.secondary};
+    background-color: #e3e4e6;
   }
   &.actionClose:hover {
-    background-color: ${({ theme }: ThemeProps) => theme.colors.danger};
+    background-color: #e45454;
   }
 `
 
@@ -62,17 +48,23 @@ function TitleBar() {
     setState(winstate)
   })
   return (
-    <BarBox className={`titleBarContainer`}>
+    <BarBox className={`barContainer`}>
       <BarBox className={`dragRegion`}></BarBox>
       <BarBox className={`actions`}>
-        <BarBox className={`actionMin`} onClick={winMinSize}>
-          <ChromeMinimize />
+        <BarBox
+          className={`actionMin`}
+          onClick={() => ipcRenderer.send(channels.windowMinSize, true)}
+        >
+          <VscChromeMinimize />
         </BarBox>
-        <BarBox className={`actionZoom`} onClick={toggleSize}>
-          <ChromeToggle action={state ? 1 : 0} />
+        <BarBox className={`actionZoom`} onClick={() => ipcRenderer.send(channels.toggleSize)}>
+          {state ? <VscChromeRestore /> : <VscChromeMaximize />}
         </BarBox>
-        <BarBox className={`actionClose`} onClick={winClose}>
-          <ChromeClose />
+        <BarBox
+          className={`actionClose`}
+          onClick={() => ipcRenderer.send(channels.windowClose, true)}
+        >
+          <VscClose />
         </BarBox>
       </BarBox>
     </BarBox>
